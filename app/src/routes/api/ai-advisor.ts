@@ -35,9 +35,21 @@ Belangrijk:
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Max-Age": "86400",
+};
+
+function withCors(headers: Record<string, string>): Record<string, string> {
+  return { ...CORS_HEADERS, ...headers };
+}
+
 export const Route = createFileRoute("/api/ai-advisor")({
   server: {
     handlers: {
+      OPTIONS: async () => new Response(null, { status: 204, headers: CORS_HEADERS }),
       POST: async ({ request }) => {
         try {
           const { messages } = (await request.json()) as { messages: ChatMessage[] };
@@ -45,7 +57,7 @@ export const Route = createFileRoute("/api/ai-advisor")({
           if (!Array.isArray(messages) || messages.length === 0) {
             return new Response(JSON.stringify({ error: "messages required" }), {
               status: 400,
-              headers: { "Content-Type": "application/json" },
+              headers: withCors({ "Content-Type": "application/json" }),
             });
           }
 
@@ -53,7 +65,7 @@ export const Route = createFileRoute("/api/ai-advisor")({
           if (!apiKey) {
             return new Response(JSON.stringify({ error: "ANTHROPIC_API_KEY missing" }), {
               status: 500,
-              headers: { "Content-Type": "application/json" },
+              headers: withCors({ "Content-Type": "application/json" }),
             });
           }
 
@@ -104,36 +116,36 @@ export const Route = createFileRoute("/api/ai-advisor")({
           });
 
           return new Response(sse, {
-            headers: {
+            headers: withCors({
               "Content-Type": "text/event-stream; charset=utf-8",
               "Cache-Control": "no-cache, no-transform",
               "X-Accel-Buffering": "no",
-            },
+            }),
           });
         } catch (e) {
           if (e instanceof Anthropic.RateLimitError) {
             return new Response(JSON.stringify({ error: "rate_limited" }), {
               status: 429,
-              headers: { "Content-Type": "application/json" },
+              headers: withCors({ "Content-Type": "application/json" }),
             });
           }
           if (e instanceof Anthropic.AuthenticationError) {
             return new Response(JSON.stringify({ error: "auth_error" }), {
               status: 500,
-              headers: { "Content-Type": "application/json" },
+              headers: withCors({ "Content-Type": "application/json" }),
             });
           }
           if (e instanceof Anthropic.APIError) {
             console.error("ai-advisor api error", e.status, e.message);
             return new Response(JSON.stringify({ error: "ai_gateway_error" }), {
               status: 500,
-              headers: { "Content-Type": "application/json" },
+              headers: withCors({ "Content-Type": "application/json" }),
             });
           }
           console.error("ai-advisor error", e);
           return new Response(JSON.stringify({ error: "unexpected" }), {
             status: 500,
-            headers: { "Content-Type": "application/json" },
+            headers: withCors({ "Content-Type": "application/json" }),
           });
         }
       },
