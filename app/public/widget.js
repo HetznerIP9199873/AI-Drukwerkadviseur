@@ -82,7 +82,7 @@
       "<textarea id='input' rows='1' placeholder='Wat wil je printen?' required></textarea>" +
       "<button type='submit' id='send'>Stuur</button>" +
       "</form>" +
-      "<div class='branding'>Powered by <a href='" + apiBase + "' target='_blank' rel='noopener'>Unfold AI</a></div>" +
+      "<div class='branding'>Powered by <a href='https://offertio.io' target='_blank' rel='noopener'>Offertio.io</a></div>" +
       "</div>";
 
     var panel = root.getElementById("panel");
