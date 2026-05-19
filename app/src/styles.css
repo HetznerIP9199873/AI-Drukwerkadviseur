@@ -1,0 +1,190 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-mosaic-1: var(--mosaic-1);
+  --color-mosaic-2: var(--mosaic-2);
+  --color-mosaic-3: var(--mosaic-3);
+  --color-mosaic-4: var(--mosaic-4);
+  --color-mosaic-5: var(--mosaic-5);
+  --color-mosaic-6: var(--mosaic-6);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Surfaces */
+  --background: oklch(0.99 0.003 90);
+  --foreground: oklch(0.18 0.015 260);
+  --surface: oklch(0.985 0.004 90);
+  --surface-2: oklch(0.96 0.006 90);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.015 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.015 260);
+
+  --ink: oklch(0.18 0.015 260);
+  --ink-soft: oklch(0.42 0.012 260);
+
+  /* Signal color: warm rood-oranje uit logo-mozaïek */
+  --primary: oklch(0.62 0.21 28);
+  --primary-foreground: oklch(0.99 0 0);
+
+  --secondary: oklch(0.96 0.006 90);
+  --secondary-foreground: oklch(0.18 0.015 260);
+
+  --muted: oklch(0.96 0.006 90);
+  --muted-foreground: oklch(0.5 0.012 260);
+
+  --accent: oklch(0.94 0.01 90);
+  --accent-foreground: oklch(0.18 0.015 260);
+
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.9 0.008 90);
+  --input: oklch(0.9 0.008 90);
+  --ring: oklch(0.62 0.21 28);
+
+  /* Mosaic accent kleuren uit logo */
+  --mosaic-1: oklch(0.62 0.21 28);   /* rood-oranje */
+  --mosaic-2: oklch(0.7 0.16 60);    /* oranje */
+  --mosaic-3: oklch(0.78 0.16 90);   /* geel */
+  --mosaic-4: oklch(0.55 0.18 145);  /* groen */
+  --mosaic-5: oklch(0.58 0.17 230);  /* blauw */
+  --mosaic-6: oklch(0.32 0.12 265);  /* navy */
+
+  --sidebar: oklch(0.98 0.003 90);
+  --sidebar-foreground: oklch(0.18 0.015 260);
+  --sidebar-primary: oklch(0.62 0.21 28);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.006 90);
+  --sidebar-accent-foreground: oklch(0.18 0.015 260);
+  --sidebar-border: oklch(0.9 0.008 90);
+  --sidebar-ring: oklch(0.62 0.21 28);
+
+  --chart-1: oklch(0.62 0.21 28);
+  --chart-2: oklch(0.7 0.16 60);
+  --chart-3: oklch(0.78 0.16 90);
+  --chart-4: oklch(0.55 0.18 145);
+  --chart-5: oklch(0.58 0.17 230);
+}
+
+.dark {
+  --background: oklch(0.14 0.012 260);
+  --foreground: oklch(0.97 0.005 90);
+  --surface: oklch(0.17 0.013 260);
+  --surface-2: oklch(0.21 0.014 260);
+  --card: oklch(0.17 0.013 260);
+  --card-foreground: oklch(0.97 0.005 90);
+  --popover: oklch(0.17 0.013 260);
+  --popover-foreground: oklch(0.97 0.005 90);
+  --ink: oklch(0.97 0.005 90);
+  --ink-soft: oklch(0.75 0.01 90);
+  --primary: oklch(0.68 0.21 28);
+  --primary-foreground: oklch(0.14 0.012 260);
+  --secondary: oklch(0.24 0.015 260);
+  --secondary-foreground: oklch(0.97 0.005 90);
+  --muted: oklch(0.24 0.015 260);
+  --muted-foreground: oklch(0.7 0.012 260);
+  --accent: oklch(0.24 0.015 260);
+  --accent-foreground: oklch(0.97 0.005 90);
+  --destructive: oklch(0.7 0.22 27);
+  --destructive-foreground: oklch(0.14 0.012 260);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.68 0.21 28);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: var(--font-script);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Mozaïek band: subtiele gekleurde pixel-strip als visuele scheiding */
+  .mosaic-band {
+    background-image:
+      linear-gradient(90deg,
+        var(--mosaic-6) 0 8.33%,
+        var(--mosaic-5) 8.33% 16.66%,
+        var(--mosaic-4) 16.66% 25%,
+        var(--mosaic-3) 25% 33.33%,
+        var(--mosaic-2) 33.33% 41.66%,
+        var(--mosaic-1) 41.66% 50%,
+        var(--mosaic-6) 50% 58.33%,
+        var(--mosaic-5) 58.33% 66.66%,
+        var(--mosaic-3) 66.66% 75%,
+        var(--mosaic-4) 75% 83.33%,
+        var(--mosaic-2) 83.33% 91.66%,
+        var(--mosaic-1) 91.66% 100%
+      );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
