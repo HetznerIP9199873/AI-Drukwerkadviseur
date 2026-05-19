@@ -1,0 +1,267 @@
+{
+  "scoring_methodology": {
+    "criteria_weights": {
+      "kwaliteit": {
+        "weight": 0.25,
+        "factors": [
+          "resolutie",
+          "kleur_reproductie",
+          "scherpte",
+          "consistentie"
+        ],
+        "calculation": "gewogen_gemiddelde_van_factoren"
+      },
+      "duurzaamheid": {
+        "weight": 0.2,
+        "factors": [
+          "levensduur_jaren",
+          "weerbestendigheid",
+          "UV_stabiliteit",
+          "mechanische_sterkte"
+        ],
+        "calculation": "minimale_levensduur_x_omgevingsfactor"
+      },
+      "kosten_effectiviteit": {
+        "weight": 0.25,
+        "factors": [
+          "materiaal_kosten",
+          "inkt_kosten",
+          "setup_kosten",
+          "arbeids_kosten"
+        ],
+        "calculation": "totale_kosten_per_stuk_geïnverteerd"
+      },
+      "milieu_impact": {
+        "weight": 0.15,
+        "factors": [
+          "VOC_emissies",
+          "recyclebaar",
+          "hernieuwbare_grondstoffen",
+          "energie_verbruik"
+        ],
+        "calculation": "gecombineerde_milieu_score"
+      },
+      "productie_snelheid": {
+        "weight": 0.15,
+        "factors": [
+          "setup_tijd",
+          "print_snelheid",
+          "droogtijd",
+          "afwerking_tijd"
+        ],
+        "calculation": "totale_doorlooptijd_geïnverteerd"
+      }
+    },
+    "score_ranges": {
+      "excellent": "8.5-10.0",
+      "good": "7.0-8.4",
+      "acceptable": "5.5-6.9",
+      "poor": "3.0-5.4",
+      "unacceptable": "0-2.9"
+    }
+  },
+  "decision_trees": {
+    "materiaal_selectie": {
+      "root_question": "Waar komt het product te staan?",
+      "branches": {
+        "binnen": {
+          "next_question": "Wat is de prioriteit?",
+          "branches": {
+            "kwaliteit": {
+              "recommendation": "coated_paper",
+              "reasoning": "Coated papier geeft 20-30% betere kleur reproductie door lagere inkt absorptie en gladder oppervlak"
+            },
+            "kosten": {
+              "recommendation": "offset_paper",
+              "reasoning": "Offset papier is 30-50% goedkoper dan coated en voldoende voor binnen gebruik waar UV-bestendigheid niet nodig is"
+            }
+          }
+        },
+        "buiten": {
+          "next_question": "Hoe lang moet het meegaan?",
+          "branches": {
+            "1-3_jaar": {
+              "recommendation": "calendered_vinyl",
+              "reasoning": "Calendered vinyl kosteneffectief voor kortere toepassingen, 50-70% goedkoper dan cast vinyl bij voldoende 3-5 jaar levensduur"
+            },
+            "5+_jaar": {
+              "recommendation": "cast_vinyl",
+              "reasoning": "Cast vinyl heeft superieure dimensionale stabiliteit en 7-10 jaar outdoor performance, rechtvaardigt 50-100% hogere kosten"
+            }
+          }
+        }
+      }
+    },
+    "inkt_selectie": {
+      "root_question": "Welk materiaal wordt gebruikt?",
+      "branches": {
+        "papier": {
+          "next_question": "Binnen of buiten toepassing?",
+          "branches": {
+            "binnen": {
+              "recommendation": "offset_inkt_of_aqueous",
+              "reasoning": "Offset inkt optimaal voor papier door absorptie matching. Aqueous voor digitaal - water-based is veilig en kosteneffectief binnen"
+            },
+            "buiten": {
+              "recommendation": "UV_inkt",
+              "reasoning": "UV-inkt nodig voor outdoor paper applications - instant cure voorkomt wegtrekken, UV-bestendigheid cruciaal"
+            }
+          }
+        },
+        "vinyl": {
+          "recommendation": "solvent_based",
+          "reasoning": "Solvent inkten penetreren vinyl surface voor optimale adhesie. Eco-solvent balanceert prestatie vs. veiligheid"
+        },
+        "textiel": {
+          "next_question": "Katoen of polyester basis?",
+          "branches": {
+            "katoen": {
+              "recommendation": "pigment_inkt",
+              "reasoning": "Pigment inkten binden mechanisch met katoen vezels, wasbestendig tot 50+ cycles, geen migration"
+            },
+            "polyester": {
+              "recommendation": "sublimatie_inkt",
+              "reasoning": "Sublimatie integreert chemisch in polyester vezels - permanent binding, geen surface layer"
+            }
+          }
+        }
+      }
+    },
+    "techniek_selectie": {
+      "root_question": "Hoeveel stuks?",
+      "branches": {
+        "1-500": {
+          "next_question": "Variabele data nodig?",
+          "branches": {
+            "ja": {
+              "recommendation": "digital_printing",
+              "reasoning": "Alleen digitaal kan kosteneffectief variabele data - geen platen/setup per variant nodig"
+            },
+            "nee": {
+              "next_question": "Kwaliteit of snelheid prioriteit?",
+              "branches": {
+                "kwaliteit": {
+                  "recommendation": "digital_high_end",
+                  "reasoning": "High-end digitaal (HP Indigo/Xerox Iridesse) benadert offset kwaliteit zonder setup kosten"
+                },
+                "snelheid": {
+                  "recommendation": "digital_production",
+                  "reasoning": "Production digitaal 50-100+ ppm vs. offset setup tijd 30-60 min - 10x sneller voor kleine oplages"
+                }
+              }
+            }
+          }
+        },
+        "500-5000": {
+          "recommendation": "analysis_needed",
+          "reasoning": "Break-even zone: vergelijk total cost digitaal vs. offset gebaseerd op complexity, colors, finishing requirements"
+        },
+        "5000+": {
+          "recommendation": "offset_printing",
+          "reasoning": "Offset wordt kosteneffectief door setup kosten spreiding. Per-stuk kosten €0.02-0.05 vs. digitaal €0.05-0.15"
+        }
+      }
+    }
+  },
+  "reasoning_templates": {
+    "kostenberedenering": {
+      "template": "Omdat {materiaal} €{prijs_per_eenheid} kost en u {aantal} stuks nodig heeft, zijn de materiaalkosten €{materiaal_totaal}. {techniek} heeft setup kosten van €{setup} maar per-stuk kosten van slechts €{per_stuk}, totaal €{techniek_totaal}. {alternatief_techniek} zou €{alternatief_totaal} kosten omdat {alternatief_redenering}.",
+      "voorbeeld": "Omdat coated papier €1.50/kg kost en u 1000 folders nodig heeft, zijn de materiaalkosten €45. Offset heeft setup kosten van €200 maar per-stuk kosten van €0.08, totaal €280. Digital zou €350 kosten omdat geen setup maar €0.35 per stuk."
+    },
+    "kwaliteitsredenering": {
+      "template": "{materiaal} geeft {kwaliteit_voordeel} omdat {technische_reden}. {inkt} optimaliseert dit door {inkt_voordeel}. Dit resulteert in {meetbare_verbetering} vergeleken met {alternatief}.",
+      "bijvoorbeeld": "Coated papier geeft 25% betere kleur reproductie omdat de gladde coating inkt absorptie minimaliseert. Offset inkt optimaliseert dit door precies gecontroleerde viscositeit. Dit resulteert in 15% hogere kleur dichtheid vergeleken met digitaal op uncoated."
+    },
+    "duurzaamheidsredenering": {
+      "template": "{materiaal} met {inkt} heeft {levensduur} outdoor performance omdat {beschermingsmechanisme}. {omgevingsfactoren} verminderen dit tot {praktische_levensduur} in normale omstandigheden. {preventie_maatregelen} kunnen dit verlengen tot {verlengde_levensduur}.",
+      "bijvoorbeeld": "Cast vinyl met eco-solvent heeft 7-10 jaar outdoor performance omdat UV-stabilisatoren polymer degradatie voorkomen. Nederlandse weather conditions verminderen dit tot 6-8 jaar in normale omstandigheden. UV-laminaat kan dit verlengen tot 8-12 jaar."
+    },
+    "technische_redenering": {
+      "template": "{techniek} is optimaal omdat {technische_specificatie} matcht met {requirement}. De {proces_parameter} van {waarde} zorgt voor {resultaat}. Alternatieve technieken zouden {probleem} veroorzaken omdat {technische_limitatie}.",
+      "bijvoorbeeld": "UV-printing is optimaal omdat instant curing matcht met non-porous substrates. De UV-dosage van 800 mJ/cm² zorgt voor complete polymerisatie. Solvent inkten zouden poor adhesion veroorzaken omdat geen penetratie mogelijk in gesloten surface."
+    }
+  },
+  "risk_assessments": {
+    "materiaal_risicos": {
+      "papier_outdoor": {
+        "risk_level": "hoog",
+        "risicos": [
+          "water_damage",
+          "UV_degradation",
+          "dimensional_instability"
+        ],
+        "mitigation": "Gebruik synthetic papier of vinyl voor outdoor",
+        "cost_impact": "2-5x verhoogde replacement frequency"
+      },
+      "vinyl_indoor": {
+        "risk_level": "laag",
+        "risicos": [
+          "overkill_costs",
+          "unnecessary_complexity"
+        ],
+        "mitigation": "Overweeg paper alternatives voor cost savings",
+        "cost_impact": "20-50% hogere materiaal kosten"
+      }
+    },
+    "inkt_risicos": {
+      "solvent_indoor": {
+        "risk_level": "medium",
+        "risicos": [
+          "VOC_emissions",
+          "health_safety",
+          "ventilation_requirements"
+        ],
+        "mitigation": "Gebruik eco-solvent of latex, proper ventilation",
+        "cost_impact": "Ventilation system €5000-15000"
+      },
+      "aqueous_outdoor": {
+        "risk_level": "hoog",
+        "risicos": [
+          "rapid_fading",
+          "water_sensitivity",
+          "short_lifespan"
+        ],
+        "mitigation": "UV-resistant inkten en protective lamination",
+        "cost_impact": "3-10x verhoogde replacement frequency"
+      }
+    }
+  },
+  "comparison_frameworks": {
+    "material_comparison": {
+      "template": "Vergeleken met {alternatief_materiaal} biedt {gekozen_materiaal}:",
+      "factors": [
+        "cost_difference",
+        "performance_difference",
+        "durability_difference",
+        "environmental_difference"
+      ],
+      "voorbeeld": {
+        "comparison": "coated_vs_offset_paper",
+        "explanation": "Vergeleken met offset papier biedt coated papier: 25% betere kleur reproductie (+€0.50/kg), 15% scherpere details, maar 40% hogere kosten. Voor high-quality brochures rechtvaardigt de kwaliteitswinst de extra kosten."
+      }
+    },
+    "technique_comparison": {
+      "template": "Voor uw {oplage} stuks project:",
+      "comparison_table": {
+        "digital": {
+          "setup": "€0",
+          "per_stuk": "€0.15",
+          "quality": "8/10",
+          "speed": "direct"
+        },
+        "offset": {
+          "setup": "€300",
+          "per_stuk": "€0.05",
+          "quality": "9/10",
+          "speed": "2 dagen"
+        },
+        "zeefdruk": {
+          "setup": "€150",
+          "per_stuk": "€0.08",
+          "quality": "7/10",
+          "speed": "3 dagen"
+        }
+      }
+    }
+  }
+}

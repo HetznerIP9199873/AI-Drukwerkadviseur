@@ -1,0 +1,783 @@
+{
+  "papier": {
+    "offset_papier": {
+      "naam": "Offset papier",
+      "gewichten": [
+        "60gsm",
+        "70gsm",
+        "80gsm",
+        "90gsm",
+        "100gsm",
+        "115gsm",
+        "120gsm",
+        "130gsm",
+        "140gsm",
+        "150gsm",
+        "160gsm",
+        "170gsm",
+        "200gsm",
+        "250gsm",
+        "300gsm"
+      ],
+      "formaten": [
+        "A4",
+        "A3",
+        "SRA3",
+        "SRA2",
+        "SRA1",
+        "B-formaten",
+        "custom_sizes"
+      ],
+      "merken": [
+        "Navigator",
+        "Xerox_Premier",
+        "HP_Everyday",
+        "Canon_Red_Label",
+        "Double_A"
+      ],
+      "eigenschappen": {
+        "absorptie": "gemiddeld",
+        "gladheid": "hoog",
+        "opaciteit": 94,
+        "helderheid": 150,
+        "bulk": 1.15
+      },
+      "geschikt_voor": {
+        "binnen": true,
+        "buiten": false,
+        "vochtig": false,
+        "uv_bestendig": false
+      },
+      "compatibele_inkten": [
+        "offset_inkt",
+        "digitaal_aqua",
+        "laser_toner",
+        "inkjet_dye"
+      ],
+      "kosten_per_kg": "€0.80-1.20",
+      "milieu_certificaten": [
+        "FSC",
+        "PEFC"
+      ],
+      "recyclebaar": true
+    },
+    "coated_gloss": {
+      "naam": "Gestreken papier glossy",
+      "gewichten": [
+        "90gsm",
+        "115gsm",
+        "130gsm",
+        "150gsm",
+        "170gsm",
+        "200gsm",
+        "250gsm",
+        "300gsm",
+        "350gsm"
+      ],
+      "coating": "dubbel_gestreken",
+      "glans_niveau": "hoog_85_plus",
+      "merken": [
+        "Sappi_Galerie",
+        "UPM_Finesse",
+        "Stora_Enso_Cupforma",
+        "Arjowiggins_Condat"
+      ],
+      "properties": {
+        "absorptie": "laag",
+        "dot_gain": "15%",
+        "kleur_gamut": "breed",
+        "print_gloss": 85
+      },
+      "toepassingen": [
+        "magazines",
+        "catalogi_high_end",
+        "art_books",
+        "luxury_brochures"
+      ],
+      "kosten_per_kg": "€1.20-2.00",
+      "milieu_impact": "gemiddeld_hoog"
+    },
+    "coated_silk": {
+      "naam": "Gestreken papier silk/mat",
+      "gewichten": [
+        "90gsm",
+        "115gsm",
+        "130gsm",
+        "150gsm",
+        "170gsm",
+        "200gsm",
+        "250gsm",
+        "300gsm"
+      ],
+      "coating": "dubbel_gestreken_mat",
+      "glans_niveau": "silk_25-35",
+      "merken": [
+        "Sappi_Galerie_Silk",
+        "UPM_Finesse_Silk",
+        "Fedrigoni_Symbol"
+      ],
+      "voordelen": [
+        "geen_glans_reflectie",
+        "premium_uitstraling",
+        "goed_leesbaar"
+      ],
+      "kosten_per_kg": "€1.30-2.10"
+    },
+    "uncoated": {
+      "naam": "Ongestreken papier",
+      "types": [
+        "woodfree",
+        "recycled",
+        "natural",
+        "cream",
+        "antique"
+      ],
+      "gewichten": [
+        "60gsm",
+        "70gsm",
+        "80gsm",
+        "90gsm",
+        "100gsm",
+        "115gsm",
+        "120gsm",
+        "140gsm",
+        "160gsm"
+      ],
+      "texturen": [
+        "smooth",
+        "laid",
+        "linen",
+        "felt",
+        "canvas"
+      ],
+      "toepassingen": [
+        "boeken",
+        "literary_publications",
+        "official_documents",
+        "letters"
+      ],
+      "absorptie": "hoog",
+      "bulk": 1.3,
+      "kosten_per_kg": "€0.70-1.50"
+    },
+    "karton": {
+      "SBS_karton": {
+        "naam": "SBS Karton (Solid Bleached Sulphate)",
+        "gewichten": [
+          "200gsm",
+          "230gsm",
+          "250gsm",
+          "280gsm",
+          "300gsm",
+          "350gsm",
+          "400gsm",
+          "450gsm"
+        ],
+        "eigenschappen": {
+          "stijfheid": "zeer_hoog",
+          "printability": "excellent",
+          "food_safe": true
+        },
+        "toepassingen": [
+          "food_packaging",
+          "cosmetics",
+          "pharmaceuticals",
+          "luxury_boxes"
+        ],
+        "kosten_per_kg": "€1.50-2.50"
+      },
+      "FBB_karton": {
+        "naam": "FBB Karton (Folding Box Board)",
+        "gewichten": [
+          "200gsm",
+          "250gsm",
+          "300gsm",
+          "350gsm",
+          "400gsm"
+        ],
+        "lagen": "multi_layer_met_recycled_kern",
+        "toepassingen": [
+          "general_packaging",
+          "cereal_boxes",
+          "detergent"
+        ],
+        "kosten_per_kg": "€1.20-2.00"
+      },
+      "duplex_karton": {
+        "naam": "Duplex/Triplex karton",
+        "gewichten": [
+          "250gsm",
+          "300gsm",
+          "350gsm",
+          "400gsm",
+          "450gsm",
+          "500gsm"
+        ],
+        "structuur": "gestreken_top_grijze_achterkant",
+        "toepassingen": [
+          "puzzle_boxes",
+          "board_games",
+          "book_covers"
+        ],
+        "kosten_per_kg": "€0.90-1.40"
+      }
+    },
+    "specialty_papers": {
+      "synthetic_paper": {
+        "naam": "Synthetisch papier",
+        "materiaal": "polypropyleen_of_polyethyleen",
+        "diktes": [
+          "60micron",
+          "80micron",
+          "120micron",
+          "160micron",
+          "200micron"
+        ],
+        "eigenschappen": {
+          "waterproof": true,
+          "scheurbestendig": true,
+          "chemisch_bestendig": true
+        },
+        "toepassingen": [
+          "outdoor_labels",
+          "marine_charts",
+          "instruction_manuals"
+        ],
+        "kosten_per_kg": "€3.00-8.00"
+      },
+      "security_paper": {
+        "naam": "Veiligheidspapier",
+        "features": [
+          "watermarks",
+          "security_threads",
+          "reactive_coatings",
+          "copy_void"
+        ],
+        "toepassingen": [
+          "certificates",
+          "tickets",
+          "vouchers",
+          "official_documents"
+        ],
+        "kosten_per_kg": "€5.00-25.00"
+      },
+      "metallic_paper": {
+        "naam": "Metallic papier",
+        "types": [
+          "silver",
+          "gold",
+          "copper",
+          "holographic"
+        ],
+        "basis": "polyester_met_metaal_coating",
+        "toepassingen": [
+          "luxury_packaging",
+          "wine_labels",
+          "cosmetics"
+        ],
+        "kosten_per_kg": "€8.00-20.00"
+      }
+    }
+  },
+  "kunststoffen": {
+    "vinyl_types": {
+      "calendered_vinyl": {
+        "naam": "Calendered Vinyl",
+        "diktes": [
+          "75micron",
+          "100micron",
+          "125micron"
+        ],
+        "levensduur": "3-5_jaar_buiten",
+        "eigenschappen": {
+          "economisch": true,
+          "matige_conformability": true
+        },
+        "toepassingen": [
+          "temporary_signage",
+          "indoor_graphics",
+          "short_term_outdoor"
+        ],
+        "kosten_per_m2": "€2.00-4.00"
+      },
+      "cast_vinyl": {
+        "naam": "Cast Vinyl",
+        "diktes": [
+          "50micron",
+          "65micron",
+          "80micron"
+        ],
+        "levensduur": "7-10_jaar_buiten",
+        "eigenschappen": {
+          "excellent_conformability": true,
+          "dimensional_stability": true
+        },
+        "toepassingen": [
+          "vehicle_wraps",
+          "architectural_graphics",
+          "long_term_outdoor"
+        ],
+        "kosten_per_m2": "€4.00-12.00"
+      },
+      "reflective_vinyl": {
+        "naam": "Reflectief Vinyl",
+        "types": [
+          "engineer_grade",
+          "high_intensity",
+          "diamond_grade"
+        ],
+        "standaarden": [
+          "EN12899",
+          "ASTM_D4956"
+        ],
+        "toepassingen": [
+          "traffic_signs",
+          "safety_markings",
+          "emergency_vehicles"
+        ],
+        "kosten_per_m2": "€8.00-25.00"
+      },
+      "translucent_vinyl": {
+        "naam": "Translucent/Backlit Vinyl",
+        "eigenschappen": {
+          "licht_doorlatend": true,
+          "kleur_verzadiging": "hoog"
+        },
+        "toepassingen": [
+          "backlit_displays",
+          "lightboxes",
+          "window_graphics"
+        ],
+        "kosten_per_m2": "€6.00-15.00"
+      }
+    },
+    "polyester_films": {
+      "biaxially_oriented": {
+        "naam": "Biaxially Oriented PET",
+        "diktes": [
+          "12micron",
+          "23micron",
+          "50micron",
+          "75micron",
+          "100micron",
+          "125micron",
+          "175micron",
+          "250micron"
+        ],
+        "eigenschappen": {
+          "hoge_sterkte": true,
+          "temperature_stable": true,
+          "chemical_resistant": true
+        },
+        "grades": [
+          "general_purpose",
+          "high_clarity",
+          "matte",
+          "metallized"
+        ],
+        "toepassingen": [
+          "labels",
+          "industrial_marking",
+          "membrane_switches"
+        ],
+        "kosten_per_kg": "€2.50-6.00"
+      },
+      "adhesive_PET": {
+        "naam": "Polyester met lijm",
+        "lijm_types": [
+          "permanent",
+          "removable",
+          "high_tack",
+          "low_tack"
+        ],
+        "carriers": [
+          "clear",
+          "white",
+          "metallized",
+          "colored"
+        ],
+        "toepassingen": [
+          "product_labels",
+          "barcode_labels",
+          "industrial_labels"
+        ],
+        "kosten_per_m2": "€0.15-0.80"
+      }
+    },
+    "polycarbonate": {
+      "naam": "Polycarbonaat films",
+      "diktes": [
+        "125micron",
+        "175micron",
+        "250micron",
+        "375micron",
+        "500micron"
+      ],
+      "eigenschappen": {
+        "ultra_duurzaam": true,
+        "temperature_extreme": "-40C_+150C",
+        "impact_resistant": true
+      },
+      "toepassingen": [
+        "nameplates",
+        "control_panels",
+        "automotive_trim",
+        "aerospace"
+      ],
+      "kosten_per_kg": "€8.00-15.00"
+    },
+    "specialty_plastics": {
+      "polystyrene": {
+        "eigenschappen": {
+          "rigid": true,
+          "clear": true
+        },
+        "toepassingen": [
+          "displays",
+          "POS"
+        ],
+        "kosten_per_kg": "€1.50-3.00"
+      },
+      "polypropylene": {
+        "eigenschappen": {
+          "chemical_resistant": true,
+          "flexible": true
+        },
+        "toepassingen": [
+          "packaging",
+          "labels"
+        ],
+        "kosten_per_kg": "€1.20-2.50"
+      },
+      "polyimide": {
+        "eigenschappen": {
+          "high_temp": true,
+          "extreme_durable": true
+        },
+        "toepassingen": [
+          "electronics",
+          "aerospace"
+        ],
+        "kosten_per_kg": "€50-200"
+      },
+      "PTFE": {
+        "eigenschappen": {
+          "non_stick": true,
+          "chemical_proof": true
+        },
+        "toepassingen": [
+          "industrial",
+          "food_contact"
+        ],
+        "kosten_per_kg": "€15-40"
+      }
+    }
+  },
+  "textiel": {
+    "natural_fibers": {
+      "cotton_varieties": {
+        "ringspun_cotton": {
+          "gewichten": [
+            "145gsm",
+            "155gsm",
+            "165gsm",
+            "185gsm",
+            "220gsm"
+          ],
+          "eigenschappen": {
+            "soft": true,
+            "durable": true
+          },
+          "kosten_per_kg": "€3.00-6.00"
+        },
+        "organic_cotton": {
+          "gewichten": [
+            "155gsm",
+            "175gsm",
+            "200gsm"
+          ],
+          "certificaten": [
+            "GOTS",
+            "OCS"
+          ],
+          "kosten_per_kg": "€5.00-12.00"
+        },
+        "combed_cotton": {
+          "gewichten": [
+            "160gsm",
+            "180gsm",
+            "200gsm"
+          ],
+          "eigenschappen": {
+            "extra_smooth": true,
+            "less_shrinkage": true
+          },
+          "kosten_per_kg": "€4.00-8.00"
+        },
+        "bamboo_cotton": {
+          "blends": [
+            "70/30",
+            "60/40",
+            "50/50"
+          ],
+          "eigenschappen": {
+            "antibacterial": true,
+            "moisture_wicking": true
+          },
+          "kosten_per_kg": "€6.00-15.00"
+        }
+      },
+      "linen": {
+        "gewichten": [
+          "140gsm",
+          "180gsm",
+          "220gsm"
+        ],
+        "eigenschappen": {
+          "breathable": true,
+          "premium_feel": true
+        },
+        "kosten_per_kg": "€8.00-25.00"
+      },
+      "hemp": {
+        "blends": [
+          "55/45_hemp_cotton"
+        ],
+        "eigenschappen": {
+          "sustainable": true,
+          "durable": true
+        },
+        "kosten_per_kg": "€7.00-18.00"
+      }
+    },
+    "synthetic_fibers": {
+      "polyester_types": {
+        "standard_polyester": {
+          "gewichten": [
+            "125gsm",
+            "145gsm",
+            "165gsm",
+            "185gsm"
+          ],
+          "eigenschappen": {
+            "quick_dry": true,
+            "wrinkle_resistant": true
+          }
+        },
+        "recycled_polyester": {
+          "bron": "PET_bottles",
+          "certificaten": [
+            "GRS"
+          ],
+          "kosten_per_kg": "€2.50-5.00"
+        },
+        "performance_polyester": {
+          "eigenschappen": {
+            "moisture_wicking": true,
+            "UV_protection": true,
+            "odor_resistant": true
+          },
+          "kosten_per_kg": "€4.00-12.00"
+        },
+        "micro_polyester": {
+          "eigenschappen": {
+            "ultra_fine": true,
+            "sublimation_optimized": true
+          },
+          "kosten_per_kg": "€3.00-8.00"
+        }
+      },
+      "nylon": {
+        "types": [
+          "nylon_6",
+          "nylon_6.6"
+        ],
+        "eigenschappen": {
+          "high_strength": true,
+          "abrasion_resistant": true
+        },
+        "kosten_per_kg": "€5.00-15.00"
+      },
+      "acrylic": {
+        "eigenschappen": {
+          "wool_like": true,
+          "flame_resistant": true
+        },
+        "toepassingen": [
+          "workwear",
+          "outdoor"
+        ],
+        "kosten_per_kg": "€3.00-8.00"
+      }
+    },
+    "specialty_textiles": {
+      "canvas": {
+        "cotton_canvas": {
+          "gewichten": [
+            "280gsm",
+            "340gsm",
+            "400gsm",
+            "520gsm"
+          ],
+          "toepassingen": [
+            "art_printing",
+            "banners",
+            "bags"
+          ]
+        },
+        "polyester_canvas": {
+          "eigenschappen": {
+            "water_resistant": true,
+            "UV_stable": true
+          },
+          "toepassingen": [
+            "outdoor_banners",
+            "sails"
+          ]
+        }
+      },
+      "mesh": {
+        "polyester_mesh": {
+          "open_percentages": [
+            "30%",
+            "50%",
+            "70%"
+          ],
+          "toepassingen": [
+            "fence_banners",
+            "building_wraps"
+          ]
+        },
+        "vinyl_mesh": {
+          "eigenschappen": {
+            "flame_retardant": true,
+            "block_out": "available"
+          },
+          "kosten_per_m2": "€3.00-8.00"
+        }
+      },
+      "technical_textiles": {
+        "aramid_fabrics": {
+          "merken": [
+            "Kevlar",
+            "Nomex"
+          ],
+          "eigenschappen": {
+            "flame_resistant": true,
+            "cut_resistant": true
+          },
+          "kosten_per_kg": "€25-80"
+        },
+        "carbon_fiber": {
+          "eigenschappen": {
+            "ultra_light": true,
+            "high_strength": true
+          },
+          "toepassingen": [
+            "automotive",
+            "aerospace"
+          ],
+          "kosten_per_kg": "€15-50"
+        },
+        "glass_fiber": {
+          "eigenschappen": {
+            "heat_resistant": true,
+            "electrical_insulation": true
+          },
+          "kosten_per_kg": "€3.00-12.00"
+        }
+      }
+    }
+  },
+  "metals": {
+    "aluminum": {
+      "sheet_aluminum": {
+        "alloys": [
+          "1050",
+          "3003",
+          "5005",
+          "6061"
+        ],
+        "diktes": [
+          "0.5mm",
+          "0.8mm",
+          "1.0mm",
+          "1.5mm",
+          "2.0mm",
+          "3.0mm"
+        ],
+        "finishes": [
+          "mill_finish",
+          "anodized",
+          "powder_coated",
+          "sublimation_coated"
+        ],
+        "toepassingen": [
+          "signage",
+          "nameplates",
+          "architectural",
+          "automotive"
+        ],
+        "kosten_per_kg": "€2.00-8.00"
+      },
+      "composite_aluminum": {
+        "naam": "Aluminum Composite (Dibond/Alucobond)",
+        "diktes": [
+          "3mm",
+          "4mm",
+          "6mm"
+        ],
+        "core": "polyethylene_of_fire_retardant",
+        "toepassingen": [
+          "architectural_signage",
+          "facade_cladding",
+          "displays"
+        ],
+        "kosten_per_m2": "€8.00-25.00"
+      }
+    },
+    "stainless_steel": {
+      "grades": [
+        "304",
+        "316",
+        "430"
+      ],
+      "finishes": [
+        "brushed",
+        "mirror",
+        "bead_blasted",
+        "etched"
+      ],
+      "diktes": [
+        "0.5mm",
+        "0.8mm",
+        "1.0mm",
+        "1.5mm",
+        "2.0mm"
+      ],
+      "toepassingen": [
+        "industrial_nameplates",
+        "marine",
+        "food_industry"
+      ],
+      "kosten_per_kg": "€3.00-12.00"
+    },
+    "brass": {
+      "alloys": [
+        "C260",
+        "C360"
+      ],
+      "finishes": [
+        "polished",
+        "brushed",
+        "antique"
+      ],
+      "toepassingen": [
+        "decorative_signs",
+        "awards",
+        "marine_applications"
+      ],
+      "kosten_per_kg": "€8.00-15.00"
+    }
+  }
+}

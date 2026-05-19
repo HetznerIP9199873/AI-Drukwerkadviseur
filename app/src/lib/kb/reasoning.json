@@ -1,0 +1,358 @@
+{
+  "decision_factors": {
+    "materiaal_selectie_factoren": {
+      "omgeving": {
+        "binnen": {
+          "score_multiplier": 1.0,
+          "reasoning": "Binnen omgeving stelt minimale eisen aan weerbestendigheid, focus op kwaliteit en kosten",
+          "materiaal_preferences": [
+            "papier",
+            "karton",
+            "indoor_vinyl"
+          ],
+          "excluded_materials": [
+            "marine_grade",
+            "extreme_weather_resistant"
+          ]
+        },
+        "buiten_droog": {
+          "score_multiplier": 1.2,
+          "reasoning": "Droge outdoor condities vereisen UV-stabiliteit maar niet extreme weather resistance",
+          "materiaal_preferences": [
+            "cast_vinyl",
+            "outdoor_paper",
+            "UV_stable_materials"
+          ],
+          "required_properties": [
+            "UV_resistance",
+            "temperature_stability"
+          ]
+        },
+        "buiten_vochtig": {
+          "score_multiplier": 1.5,
+          "reasoning": "Vochtige condities vereisen waterproofing en anti-fungal properties",
+          "materiaal_preferences": [
+            "marine_vinyl",
+            "synthetic_materials",
+            "waterproof_coatings"
+          ],
+          "required_properties": [
+            "waterproof",
+            "mold_resistant",
+            "dimensional_stability"
+          ]
+        },
+        "extreem": {
+          "score_multiplier": 2.0,
+          "reasoning": "Extreme condities vereisen gespecialiseerde materialen met bewezen performance data",
+          "materiaal_preferences": [
+            "polycarbonate",
+            "specialty_films",
+            "engineered_materials"
+          ],
+          "required_certifications": [
+            "automotive_grade",
+            "aerospace_approved",
+            "military_spec"
+          ]
+        }
+      },
+      "oplage_impact": {
+        "kleine_oplage_1-100": {
+          "cost_factor": "setup_dominated",
+          "reasoning": "Bij kleine oplages domineren setup kosten, kies materialen die digitaal processing ondersteunen",
+          "preferred_materials": [
+            "digitaal_compatible",
+            "no_pretreatment_needed"
+          ],
+          "avoid_materials": [
+            "specialty_coatings",
+            "complex_handling"
+          ]
+        },
+        "medium_oplage_100-1000": {
+          "cost_factor": "balanced",
+          "reasoning": "Medium oplages allow for some setup investment, balanceer materiaal- vs. proceskosten",
+          "optimization": "cost_per_unit_minimization"
+        },
+        "grote_oplage_1000+": {
+          "cost_factor": "material_dominated",
+          "reasoning": "Grote oplages kunnen setup kosten spreiden, focus op laagste materiaalkosten per stuk",
+          "preferred_materials": [
+            "bulk_economical",
+            "web_compatible"
+          ],
+          "process_optimization": "maximize_throughput"
+        }
+      }
+    },
+    "inkt_selectie_factoren": {
+      "materiaal_compatibility": {
+        "porous_materials": {
+          "best_inks": [
+            "offset",
+            "aqueous",
+            "dye_based"
+          ],
+          "reasoning": "Poreuze materialen absorberen inkt, water-based systemen penetreren optimaal voor goede adhesie",
+          "avoid_inks": [
+            "solvent",
+            "UV_surface_cure"
+          ],
+          "technical_reason": "Solvent inkten kunnen over-penetreren, UV curt alleen op oppervlak"
+        },
+        "non_porous_materials": {
+          "best_inks": [
+            "solvent",
+            "UV_curable",
+            "latex"
+          ],
+          "reasoning": "Non-poreuze materialen vereisen inkten die chemisch/mechanisch hechten aan oppervlak",
+          "avoid_inks": [
+            "aqueous",
+            "conventional_offset"
+          ],
+          "technical_reason": "Water-based inkten kunnen niet penetreren voor adhesie"
+        },
+        "coated_materials": {
+          "best_inks": [
+            "UV",
+            "solvent",
+            "specialty_adhesion"
+          ],
+          "reasoning": "Coatings kunnen inkt adhesie blokkeren, speciale chemie nodig voor bonding",
+          "pretreatment_options": [
+            "corona_treatment",
+            "primer_application",
+            "adhesion_promoter"
+          ]
+        }
+      },
+      "performance_requirements": {
+        "outdoor_durability": {
+          "ranking": {
+            "excellent_5-7_years": [
+              "true_solvent",
+              "UV_curable"
+            ],
+            "good_3-5_years": [
+              "eco_solvent",
+              "latex"
+            ],
+            "fair_1-3_years": [
+              "mild_solvent",
+              "pigment_aqueous"
+            ],
+            "poor_months": [
+              "dye_aqueous",
+              "conventional_offset"
+            ]
+          },
+          "technical_explanation": "UV-stabiliteit en chemical crosslinking bepalen outdoor performance. Pigmenten beter dan dyes, crosslinked beter dan thermoplastic."
+        },
+        "chemical_resistance": {
+          "excellent": {
+            "inks": [
+              "2K_polyurethane",
+              "epoxy",
+              "ceramic"
+            ],
+            "applications": [
+              "industrial",
+              "automotive"
+            ]
+          },
+          "good": {
+            "inks": [
+              "UV_curable",
+              "solvent"
+            ],
+            "applications": [
+              "outdoor_signage",
+              "marine"
+            ]
+          },
+          "fair": {
+            "inks": [
+              "latex",
+              "plastisol"
+            ],
+            "applications": [
+              "general_purpose"
+            ]
+          },
+          "poor": {
+            "inks": [
+              "aqueous",
+              "offset"
+            ],
+            "applications": [
+              "indoor_only"
+            ]
+          }
+        }
+      }
+    },
+    "techniek_selectie_factoren": {
+      "oplage_breakeven_analysis": {
+        "digital_vs_offset": {
+          "breakeven_calculation": "setup_cost_offset / (cost_per_unit_digital - cost_per_unit_offset)",
+          "typical_breakeven": "800-1200_stuks_4_color",
+          "factors_affecting_breakeven": [
+            "aantal_kleuren (meer kleuren = hogere offset setup)",
+            "complexiteit_design (complex = offset voordeel)",
+            "materiaal_compatibility (specialty = digital voordeel)",
+            "doorlooptijd_requirement (snel = digital voordeel)"
+          ],
+          "example_calculation": {
+            "offset_setup": "€300",
+            "offset_per_unit": "€0.05",
+            "digital_per_unit": "€0.30",
+            "breakeven": "300 / (0.30 - 0.05) = 1200 stuks"
+          }
+        },
+        "digital_vs_screen": {
+          "textile_breakeven": "50-100_stuks",
+          "reasoning": "Zeefdruk setup per kleur €50-150, DTG €0 setup maar €3-8 per stuk vs zeefdruk €2-5 per stuk na setup"
+        }
+      },
+      "kwaliteit_requirements": {
+        "photo_quality": {
+          "best_techniques": [
+            "high_end_digital",
+            "gravure",
+            "fine_art_printing"
+          ],
+          "resolution_needed": "300+ DPI",
+          "color_gamut": "wide_gamut_required",
+          "reasoning": "Foto-kwaliteit vereist continuous tones en brede kleur gamut die alleen hoogwaardige systemen leveren"
+        },
+        "text_sharpness": {
+          "best_techniques": [
+            "offset",
+            "laser_printing",
+            "letterpress"
+          ],
+          "resolution_needed": "600+ DPI equivalent",
+          "reasoning": "Tekst scherpte vereist harde edges die beter renderen in vector-based of high-resolution systemen"
+        },
+        "color_consistency": {
+          "best_techniques": [
+            "offset",
+            "flexo",
+            "gravure"
+          ],
+          "worst_techniques": [
+            "wide_format_digital",
+            "textile_screen"
+          ],
+          "reasoning": "Analoge processen geven betere color consistency door fysieke inkt transfer vs. digital variability"
+        }
+      }
+    }
+  },
+  "explanation_generators": {
+    "cost_breakdown": {
+      "template": "Kostenverdeling voor {aantal} stuks {product}:\n• Materiaal: €{materiaal_cost} ({materiaal_percentage}%)\n• Inkt: €{inkt_cost} ({inkt_percentage}%)\n• Setup: €{setup_cost} ({setup_percentage}%)\n• Productie: €{productie_cost} ({productie_percentage}%)\n• Afwerking: €{afwerking_cost} ({afwerking_percentage}%)\nTotaal: €{total_cost} = €{per_unit_cost} per stuk",
+      "reasoning_add": "Setup kosten zijn {setup_impact} omdat {setup_reasoning}. Per-stuk kosten zijn {unit_impact} door {unit_reasoning}."
+    },
+    "performance_comparison": {
+      "template": "{gekozen_optie} scoort {score}/10 omdat:\n✓ {voordeel_1}: {uitleg_1}\n✓ {voordeel_2}: {uitleg_2}\n⚠ {nadeel_1}: {uitleg_1}\nAlternatief {alternatief} zou {alternatief_score}/10 scoren omdat {alternatief_reasoning}",
+      "scoring_explanation": "Scores gebaseerd op gewogen criteria: Kwaliteit (25%), Duurzaamheid (20%), Kosten (25%), Milieu (15%), Snelheid (15%)"
+    },
+    "technical_justification": {
+      "template": "Technisch gezien is {keuze} optimaal omdat:\n1. {technische_eigenschap_1} van {waarde_1} zorgt voor {resultaat_1}\n2. {technische_eigenschap_2} matcht perfect met {requirement_2}\n3. Alternatieve opties zouden {probleem} veroorzaken door {technische_limitatie}\nDit resulteert in {meetbare_voordeel} vergeleken met {alternatief}"
+    },
+    "risk_mitigation": {
+      "template": "Geïdentificeerde risicos en mitigatie:\n⚠ Risico: {risico_1}\n→ Mitigatie: {mitigatie_1}\n→ Restrisico: {restrisico_1}\n⚠ Risico: {risico_2}\n→ Mitigatie: {mitigatie_2}\n→ Impact bij falen: {impact_beschrijving}"
+    }
+  },
+  "confidence_indicators": {
+    "data_quality": {
+      "high_confidence": {
+        "criteria": [
+          "multiple_sources",
+          "recent_data",
+          "tested_combinations"
+        ],
+        "indicator": "🟢 Hoge betrouwbaarheid",
+        "explanation": "Aanbeveling gebaseerd op meerdere bronnen en bewezen combinaties"
+      },
+      "medium_confidence": {
+        "criteria": [
+          "single_source",
+          "extrapolated_data",
+          "similar_applications"
+        ],
+        "indicator": "🟡 Gemiddelde betrouwbaarheid",
+        "explanation": "Aanbeveling gebaseerd op vergelijkbare toepassingen, adviseer test print"
+      },
+      "low_confidence": {
+        "criteria": [
+          "theoretical_only",
+          "uncommon_combination",
+          "limited_data"
+        ],
+        "indicator": "🔴 Lage betrouwbaarheid",
+        "explanation": "Aanbeveling theoretisch, sterk aanbevolen om samples te testen"
+      }
+    },
+    "recommendation_strength": {
+      "strong": {
+        "threshold": "score_difference > 2.0",
+        "language": "Ik adviseer sterk",
+        "confidence": "95%+"
+      },
+      "moderate": {
+        "threshold": "score_difference 1.0-2.0",
+        "language": "Ik raad aan",
+        "confidence": "80-95%"
+      },
+      "weak": {
+        "threshold": "score_difference 0.5-1.0",
+        "language": "Ik suggereer",
+        "confidence": "60-80%"
+      },
+      "uncertain": {
+        "threshold": "score_difference < 0.5",
+        "language": "Beide opties zijn vergelijkbaar",
+        "confidence": "<60%"
+      }
+    }
+  },
+  "contextual_explanations": {
+    "industry_standards": {
+      "automotive": {
+        "requirements": [
+          "temperature_cycling",
+          "chemical_resistance",
+          "adhesion_tests"
+        ],
+        "explanations": "Automotive toepassingen vereisen speciale tests volgens ASTM/ISO standaarden voor -40°C tot +85°C cyclus"
+      },
+      "food_packaging": {
+        "requirements": [
+          "migration_limits",
+          "FDA_compliance",
+          "barrier_properties"
+        ],
+        "explanations": "Food contact vereist low-migration inkten <10ppb volgens EU/FDA regulaties"
+      },
+      "outdoor_signage": {
+        "requirements": [
+          "UV_stability",
+          "weather_resistance",
+          "color_fastness"
+        ],
+        "explanations": "Outdoor performance gemeten volgens ASTM G155 xenon weathering tests"
+      }
+    },
+    "regional_factors": {
+      "nederland": {
+        "climate_impact": "Hoge luchtvochtigheid (80%+) en UV-index 3-6 vereisen extra moisture resistance",
+        "regulations": "EU REACH compliance vereist voor chemicaliën, ROHS voor electronics",
+        "supplier_network": "Korte supply chains Europa, 2-3 dagen levering standaard"
+      }
+    }
+  }
+}

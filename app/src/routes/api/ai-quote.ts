@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import Anthropic from "@anthropic-ai/sdk";
+import { KB_CONTEXT } from "@/lib/kb";
 
 const QuoteSchema = z.object({
   product: z.string().min(1).max(100),
@@ -63,7 +64,11 @@ Schrijf een korte, professionele onderbouwing (3-4 zinnen) van deze offerte. Leg
           const message = await client.messages.create({
             model: "claude-sonnet-4-6",
             max_tokens: 512,
-            system: QUOTE_SYSTEM_PROMPT,
+            // Cache het zware KB-blok zodat herhaalde offerte-aanvragen ~0.1x kosten.
+            system: [
+              { type: "text", text: QUOTE_SYSTEM_PROMPT },
+              { type: "text", text: KB_CONTEXT, cache_control: { type: "ephemeral" } },
+            ],
             messages: [{ role: "user", content: userPrompt }],
           });
 

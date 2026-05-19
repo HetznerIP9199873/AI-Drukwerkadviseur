@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Anthropic from "@anthropic-ai/sdk";
+import { KB_CONTEXT } from "@/lib/kb";
 
 const SYSTEM_PROMPT = `Je bent de Unfold AI-adviseur. Unfold is een Nederlandse drukkerij in Haarlem met de payoff "Unfold print op echt álles!". Je adviseert klanten over welk materiaal en welke afwerking het best past bij hun project.
 
@@ -60,10 +61,12 @@ export const Route = createFileRoute("/api/ai-advisor")({
           const stream = client.messages.stream({
             model: "claude-sonnet-4-6",
             max_tokens: 2048,
-            // cache_control op de system block wordt actief zodra de prompt > 2048 tokens groeit
-            // (bv. nadat de KB is toegevoegd). Onder die drempel is het een no-op, geen kosten.
+            // Twee system-blokken: Unfold-specifieke instructie eerst, daarna industriebrede KB.
+            // cache_control op het laatste blok cachet het hele system-prefix (~14k tokens),
+            // wat na de eerste request ~0.1x kost in plaats van vol tarief.
             system: [
-              { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+              { type: "text", text: SYSTEM_PROMPT },
+              { type: "text", text: KB_CONTEXT, cache_control: { type: "ephemeral" } },
             ],
             messages: claudeMessages,
           });

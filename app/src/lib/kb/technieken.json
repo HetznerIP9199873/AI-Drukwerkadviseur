@@ -1,0 +1,528 @@
+{
+  "lithografie_offset": {
+    "sheetfed_offset": {
+      "single_color": {
+        "naam": "1-kleur Sheetfed Offset",
+        "formaten": [
+          "A3",
+          "SRA3",
+          "B2",
+          "B1",
+          "40inch"
+        ],
+        "oplage_optimaal": "1000-100000",
+        "snelheid": "5000-15000_sph",
+        "applications": [
+          "letterheads",
+          "forms",
+          "single_color_books"
+        ],
+        "kosten_setup": "€50-150",
+        "kosten_per_1000": "€20-80"
+      },
+      "multi_color": {
+        "4_color": {
+          "CMYK_process": true,
+          "applications": [
+            "magazines",
+            "catalogs",
+            "brochures"
+          ],
+          "kosten_setup": "€200-400"
+        },
+        "6_color": {
+          "CMYK_plus_2_spots": true,
+          "luxury_applications": true,
+          "kosten_setup": "€300-600"
+        },
+        "8_color_perfecting": {
+          "both_sides_simultaneous": true,
+          "highest_productivity": true
+        }
+      },
+      "specialty_offset": {
+        "uv_offset": {
+          "instant_curing": true,
+          "brilliant_colors": true,
+          "thick_substrates": true
+        },
+        "hybrid_offset": {
+          "conventional_plus_UV_units": true,
+          "maximum_flexibility": true
+        }
+      }
+    },
+    "web_offset": {
+      "coldset_web": {
+        "naam": "Coldset Web Offset",
+        "applications": [
+          "newspapers",
+          "inserts",
+          "catalogs_bulk",
+          "books_bulk"
+        ],
+        "web_widths": [
+          "578mm",
+          "787mm",
+          "1016mm",
+          "1270mm"
+        ],
+        "snelheid": "12-15_meter_per_second",
+        "minimum_oplage": "25000",
+        "kosten_per_exemplaar": "€0.01-0.05"
+      },
+      "heatset_web": {
+        "naam": "Heatset Web Offset",
+        "drying": "gas_flame_150-180C",
+        "glossy_finish": true,
+        "applications": [
+          "magazines_high_quality",
+          "catalogs_premium"
+        ],
+        "inline_finishing": [
+          "folding",
+          "cutting",
+          "binding_saddle_stitch"
+        ]
+      }
+    }
+  },
+  "digital_printing": {
+    "electrophotography": {
+      "laser_mono": {
+        "snelheid": "20-120_ppm",
+        "resolutie": "600-1200_dpi",
+        "formaten": [
+          "A4",
+          "A3",
+          "SRA3",
+          "banner_320mm"
+        ],
+        "applications": [
+          "office_documents",
+          "books_POD",
+          "forms"
+        ],
+        "kosten_per_pagina": "€0.005-0.02"
+      },
+      "laser_color": {
+        "technologies": [
+          "4_beam_laser",
+          "LED_array",
+          "tandem_engine"
+        ],
+        "snelheid": "15-100_ppm_color",
+        "kleur_kwaliteit": "near_offset",
+        "finishing": [
+          "stapling",
+          "hole_punching",
+          "booklet_making"
+        ],
+        "kosten_per_pagina": "€0.02-0.08"
+      },
+      "production_digital": {
+        "xerox_iridesse": {
+          "metallic_colors": [
+            "gold",
+            "silver",
+            "white",
+            "clear"
+          ],
+          "unique_effects": true
+        },
+        "hp_indigo": {
+          "liquid_electrophotography": true,
+          "offset_like_quality": true
+        },
+        "canon_imagepress": {
+          "high_volume_production": true,
+          "consistent_quality": true
+        }
+      }
+    },
+    "inkjet_digital": {
+      "wide_format": {
+        "aqueous_wide": {
+          "max_width": "1520mm_1600mm",
+          "applications": [
+            "posters",
+            "CAD_drawings",
+            "photo_enlargements"
+          ],
+          "media": [
+            "photo_paper",
+            "canvas",
+            "fine_art_paper"
+          ],
+          "kosten_per_m2": "€2-15"
+        },
+        "solvent_wide": {
+          "eco_solvent": {
+            "indoor_safe": true,
+            "outdoor_durability": "3-5_years",
+            "kosten_per_m2": "€3-8"
+          },
+          "mild_solvent": {
+            "premium_quality": true,
+            "minimal_odor": true,
+            "kosten_per_m2": "€4-12"
+          },
+          "true_solvent": {
+            "maximum_durability": true,
+            "industrial_grade": true,
+            "kosten_per_m2": "€2-6"
+          }
+        },
+        "latex_wide": {
+          "hp_latex": {
+            "odorless": true,
+            "stretch_applications": true,
+            "kosten_per_m2": "€4-10"
+          },
+          "versatility": [
+            "indoor_outdoor",
+            "textiles",
+            "rigid_media"
+          ]
+        },
+        "uv_wide": {
+          "rigid_uv": {
+            "direct_print_rigid": true,
+            "thick_substrates": "up_to_50mm"
+          },
+          "hybrid_uv": {
+            "roll_and_flatbed": true,
+            "maximum_flexibility": true
+          },
+          "kosten_per_m2": "€5-20"
+        }
+      },
+      "industrial_inkjet": {
+        "single_pass": {
+          "web_speeds": "100-500_m_min",
+          "production_volumes": true
+        },
+        "variable_data": {
+          "personalization": true,
+          "addressing": true,
+          "barcodes": true
+        }
+      }
+    }
+  },
+  "screen_printing": {
+    "textile_screen": {
+      "manual_screen": {
+        "squeegee_printing": true,
+        "oplage": "1-100",
+        "setup_tijd": "30-60_min",
+        "colors_per_design": "1-8",
+        "kosten_per_stuk": "€2-15",
+        "applications": [
+          "custom_tshirts",
+          "small_runs",
+          "artisanal"
+        ]
+      },
+      "semi_automatic": {
+        "carousel_presses": {
+          "stations": "6-16",
+          "colors": "up_to_14",
+          "oplage": "50-5000"
+        },
+        "snelheid": "200-800_pieces_hour",
+        "consistent_registration": true
+      },
+      "automatic_textile": {
+        "oval_presses": {
+          "continuous_printing": true,
+          "high_volume": "1000+_pieces_hour"
+        },
+        "all_over_printing": {
+          "seamless_patterns": true,
+          "textile_yards": true
+        }
+      }
+    },
+    "graphic_screen": {
+      "flatbed_screen": {
+        "large_format": {
+          "max_size": "3x2_meter",
+          "thick_substrates": "up_to_25mm"
+        },
+        "applications": [
+          "signage",
+          "displays",
+          "industrial_panels"
+        ],
+        "ink_thickness": "up_to_100_micron"
+      },
+      "cylinder_screen": {
+        "rotary_screen": {
+          "continuous_printing": true,
+          "packaging_decoration": true
+        },
+        "applications": [
+          "labels",
+          "flexible_packaging",
+          "wall_coverings"
+        ]
+      }
+    },
+    "industrial_screen": {
+      "electronics": {
+        "pcb_screen": {
+          "solder_paste": true,
+          "conductive_traces": true,
+          "precision": "±25_micron"
+        },
+        "membrane_switches": {
+          "multiple_layers": true,
+          "electrical_connections": true
+        }
+      },
+      "automotive": {
+        "glass_printing": {
+          "ceramic_inks": true,
+          "firing_required": true
+        },
+        "dashboard_panels": {
+          "durable_inks": true,
+          "UV_stable": true
+        }
+      }
+    }
+  },
+  "flexography": {
+    "narrow_web": {
+      "label_flexo": {
+        "web_widths": [
+          "100mm",
+          "200mm",
+          "330mm",
+          "430mm"
+        ],
+        "inline_processes": [
+          "printing",
+          "laminating",
+          "die_cutting",
+          "slitting"
+        ],
+        "speeds": "50-500_m_min",
+        "colors": "up_to_10_colors",
+        "applications": [
+          "self_adhesive_labels",
+          "shrink_sleeves",
+          "flexible_packaging"
+        ]
+      },
+      "tag_flexo": {
+        "applications": [
+          "hang_tags",
+          "tickets",
+          "coupons"
+        ],
+        "substrates": [
+          "coated_paper",
+          "synthetic_paper",
+          "cardstock"
+        ],
+        "finishing": [
+          "die_cutting",
+          "perforation",
+          "numbering"
+        ]
+      }
+    },
+    "wide_web": {
+      "packaging_flexo": {
+        "web_widths": [
+          "1000mm",
+          "1300mm",
+          "1600mm",
+          "2500mm"
+        ],
+        "applications": [
+          "flexible_packaging",
+          "shopping_bags",
+          "corrugated_boxes"
+        ],
+        "speeds": "200-800_m_min",
+        "colors": "up_to_8_colors"
+      },
+      "publication_flexo": {
+        "applications": [
+          "newspapers",
+          "magazines_web",
+          "catalogs"
+        ],
+        "water_based_inks": true,
+        "environmental_friendly": true
+      }
+    }
+  },
+  "gravure_printing": {
+    "publication_gravure": {
+      "web_widths": [
+        "1600mm",
+        "2000mm",
+        "2800mm",
+        "4320mm"
+      ],
+      "applications": [
+        "magazines_high_volume",
+        "catalogs_premium",
+        "packaging_films"
+      ],
+      "minimum_oplage": "500000",
+      "excellent_quality": true
+    },
+    "packaging_gravure": {
+      "flexible_packaging": {
+        "laminated_structures": true,
+        "barrier_films": true
+      },
+      "decorative_printing": {
+        "wood_grain": true,
+        "marble_effect": true
+      },
+      "applications": [
+        "cigarette_packages",
+        "food_packaging",
+        "cosmetic_films"
+      ]
+    }
+  },
+  "specialty_printing": {
+    "letterpress": {
+      "traditional_letterpress": {
+        "debossed_impression": true,
+        "tactile_quality": true,
+        "artisanal": true
+      },
+      "modern_letterpress": {
+        "precision_dies": true,
+        "foil_stamping": true,
+        "embossing": true
+      },
+      "applications": [
+        "wedding_invitations",
+        "business_cards_luxury",
+        "art_prints"
+      ]
+    },
+    "pad_printing": {
+      "applications": [
+        "promotional_items",
+        "medical_devices",
+        "automotive_parts"
+      ],
+      "curved_surfaces": true,
+      "irregular_shapes": true,
+      "precision_placement": true
+    },
+    "hot_stamping": {
+      "foil_stamping": {
+        "metallic_effects": true,
+        "holographic_foils": true,
+        "color_foils": true
+      },
+      "applications": [
+        "luxury_packaging",
+        "book_covers",
+        "certificates"
+      ]
+    },
+    "embossing_debossing": {
+      "blind_embossing": {
+        "no_ink_raised_impression": true,
+        "elegant_effect": true
+      },
+      "foil_embossing": {
+        "combining_foil_and_emboss": true,
+        "premium_appearance": true
+      }
+    }
+  },
+  "textile_printing": {
+    "direct_to_garment": {
+      "pretreatment_dtg": {
+        "cotton_pretreat": true,
+        "dark_garment_pretreat": true
+      },
+      "white_ink_dtg": {
+        "under_base_white": true,
+        "opaque_coverage": true
+      },
+      "production_speeds": "30-180_pieces_hour",
+      "no_color_limitations": true
+    },
+    "sublimation_printing": {
+      "transfer_sublimation": {
+        "paper_transfer": true,
+        "heat_press_application": true
+      },
+      "direct_sublimation": {
+        "direct_to_fabric": true,
+        "calendar_finishing": true
+      },
+      "applications": [
+        "sportswear",
+        "flags",
+        "soft_signage",
+        "promotional_textiles"
+      ]
+    },
+    "heat_transfer": {
+      "vinyl_cutting": {
+        "plotted_graphics": true,
+        "solid_colors": true,
+        "durable": "50+_washes"
+      },
+      "flex_flock": {
+        "textured_surface": true,
+        "premium_feel": true
+      },
+      "transfer_papers": {
+        "full_color_graphics": true,
+        "photo_realistic": true
+      }
+    }
+  },
+  "3d_printing": {
+    "fdm_printing": {
+      "materials": [
+        "PLA",
+        "ABS",
+        "PETG",
+        "TPU",
+        "wood_fill",
+        "metal_fill"
+      ],
+      "applications": [
+        "prototypes",
+        "custom_parts",
+        "architectural_models"
+      ],
+      "layer_height": "0.1-0.4mm",
+      "kosten_per_kg": "€20-200"
+    },
+    "sla_printing": {
+      "resin_types": [
+        "standard",
+        "tough",
+        "flexible",
+        "castable",
+        "ceramic"
+      ],
+      "detail_level": "extremely_high",
+      "surface_finish": "smooth",
+      "applications": [
+        "jewelry",
+        "dental",
+        "miniatures",
+        "detailed_prototypes"
+      ]
+    }
+  }
+}
